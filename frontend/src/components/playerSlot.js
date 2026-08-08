@@ -17,7 +17,7 @@ export default function PlayerSlot({ slot, player, onSelect }) {
       }
     >
       <span
-        className="relative flex h-14 w-14 items-center justify-center rounded-full border-2border-lime-300/80 bg-emerald-800/40 shadow-md backdrop-blur-sm transition-transform duration-150 group-hover:scale-105 group-hover:border-lime-300"
+        className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-accent/60 bg-accent/25 shadow-md backdrop-blur-sm transition-transform duration-150 group-hover:scale-105 group-hover:border-accent"
       >
         {player?.photoUrl ? (
           <img
@@ -32,7 +32,7 @@ export default function PlayerSlot({ slot, player, onSelect }) {
         ) : (
           <svg
             viewBox="0 0 24 24"
-            className="h-7 w-7 text-emerald-100/70"
+            className="h-7 w-7 text-white/70"
             fill="currentColor"
             aria-hidden="true"
           >
@@ -40,7 +40,7 @@ export default function PlayerSlot({ slot, player, onSelect }) {
           </svg>
         )}
         <span
-          className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-white text-emerald-700 shadow ring-2 ring-emerald-900/40"
+          className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-white text-accent shadow ring-2 ring-accent/40"
         >
           <svg
             viewBox="0 0 24 24"
@@ -53,7 +53,7 @@ export default function PlayerSlot({ slot, player, onSelect }) {
           </svg>
         </span>
       </span>
-      <span className="mt-1 text-[10px] font-medium uppercase tracking-wide text-emerald-100/80">
+      <span className="mt-1 text-[10px] font-medium uppercase tracking-wide text-white/80">
         {player ? player.name.split(" ").slice(-1)[0] : slot.label}
       </span>
     </button>

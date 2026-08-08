@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="15 100 1145 280" width="100%" height="100%">
+  <style>
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+    path {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+  </style>
+  <g>
+    <path pathLength="1" style="animation: draw 0.5s 0s ease-out forwards" d="M 22 268 C 30 238 28 192 54 174 C 80 156 108 138 126 124 C 136 116 140 106 136 118" />
+    <path pathLength="1" style="animation: draw 0.4s 0.5s ease-out forwards" d="M 136 118 C 142 168 138 230 144 292" />
+    <path pathLength="1" style="animation: draw 0.6s 0.9s ease-out forwards" d="M 144 195 C 192 182 218 198 218 234 C 218 268 190 290 150 292 C 146 292 144 294 144 292" />
+    <path pathLength="1" style="animation: draw 0.5s 1.5s ease-out forwards" d="M 216 236 C 252 242 288 256 306 276 C 312 286 314 294 308 292" />
+    <path pathLength="1" style="animation: draw 0.35s 2s ease-out forwards" d="M 310 292 C 310 258 316 234 318 210 C 322 246 320 268 324 292" />
+    <path pathLength="1" style="animation: draw 0.6s 2.35s ease-out forwards" d="M 326 292 C 330 250 340 220 362 214 C 382 208 396 222 394 242 C 392 258 376 266 360 268 C 342 270 330 262 334 280 C 338 294 358 298 380 296 C 396 294 402 292 406 290" />
+    <path pathLength="1" style="animation: draw 0.7s 2.95s ease-out forwards" d="M 408 290 C 414 240 416 178 412 140 C 410 116 428 110 434 130 C 440 152 436 220 438 292 C 446 246 454 216 470 212 C 488 208 496 244 500 292" />
+    <path pathLength="1" style="animation: draw 0.35s 3.65s ease-out forwards" d="M 502 292 C 502 256 508 234 512 210 C 516 246 514 268 518 292" />
+    <path pathLength="1" style="animation: draw 0.5s 4s ease-out forwards" d="M 522 292 C 528 240 530 178 526 142 C 524 116 542 110 548 132 C 554 154 550 220 552 292 C 554 306 556 312 560 314" />
+    <path pathLength="1" style="animation: draw 0.3s 4.5s ease-out forwards" d="M 506 208 C 530 204 550 206 566 212" />
+    <path pathLength="1" style="animation: draw 0.75s 4.8s ease-out forwards" d="M 700 296 C 688 250 702 200 726 182 C 746 168 772 168 788 186 C 806 206 800 232 782 248 C 762 266 736 270 720 282 C 708 292 704 306 718 312 C 756 322 794 306 820 292 C 842 280 854 272 862 268" />
+    <path pathLength="1" style="animation: draw 0.35s 5.55s ease-out forwards" d="M 866 272 C 870 244 874 226 878 208 C 882 242 880 268 884 292" />
+    <path pathLength="1" style="animation: draw 0.5s 5.9s ease-out forwards" d="M 888 292 C 894 252 902 222 918 212 C 934 204 948 232 952 292" />
+    <path pathLength="1" style="animation: draw 0.7s 6.4s ease-out forwards" d="M 956 292 C 962 240 964 178 960 142 C 958 116 976 112 982 132 C 988 154 984 220 986 292 C 992 252 1000 222 1016 214 C 1032 206 1044 236 1048 292" />
+    <path pathLength="1" style="animation: draw 0.6s 7.1s ease-out forwards" d="M 1052 292 C 1056 248 1066 218 1082 212 C 1098 206 1110 222 1110 246 C 1110 268 1096 282 1076 288 C 1058 292 1048 288 1044 282 C 1052 300 1074 312 1094 308 C 1118 304 1134 296 1142 290" />
+    <path pathLength="1" style="animation: draw 0.15s 7.7s ease-out forwards" d="M 316 180 a 2 2 0 1 1 4 0 a 2 2 0 1 1 -4 0" />
+    <path pathLength="1" style="animation: draw 0.15s 7.85s ease-out forwards" d="M 510 180 a 2 2 0 1 1 4 0 a 2 2 0 1 1 -4 0" />
+    <path pathLength="1" style="animation: draw 0.15s 8s ease-out forwards" d="M 876 178 a 2 2 0 1 1 4 0 a 2 2 0 1 1 -4 0" />
+    <path pathLength="1" style="animation: draw 0.8s 8.15s ease-out forwards" d="M 60 338 C 260 326 560 344 860 334 C 1000 330 1088 340 1146 350 C 1162 353 1172 358 1166 366 C 1160 374 1150 372 1148 364" />
+  </g>
+</svg>
