@@ -1,0 +1,20 @@
+import { verifyToken } from "../services/auth.services.js";
+
+export async function requireAuth(req, res, next) {
+  const header = req.headers.authorization || "";
+  const token = header.startsWith("Bearer ") ? header.slice(7) : null;
+  if (!token) {
+    return res
+      .status(401)
+      .json({ success: false, error: "Missing authorization token" });
+  }
+  try {
+    const { payload } = await verifyToken(token);
+    req.user = { uid: payload.uid, email: payload.email || null };
+    next();
+  } catch (err) {
+    return res
+      .status(401)
+      .json({ success: false, error: "Invalid or expired token" });
+  }
+}
