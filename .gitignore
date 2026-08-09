@@ -1,3 +1,5 @@
 firebase.config.js
 backend/node_modules/
 backend/bun.lock
+backend/.env
+backend/.env.local

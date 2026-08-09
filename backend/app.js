@@ -6,6 +6,7 @@ import lineupRoutes from "./routes/lineup.js";
 import teamRoutes from "./routes/teams.js";
 import sharingRoutes from "./routes/sharing.js";
 import statsRoutes from "./routes/stats.js";
+import waitlistRoutes from "./routes/waitlist.js";
 import { logger } from "./middleware/logger.js";
 import { errorHandler, notFound } from "./middleware/errorHandler.js";
 import { PORT, FRONTEND_URL } from "./config/constants.js";
@@ -36,6 +37,7 @@ app.use("/api/lineups", lineupRoutes);
 app.use("/api/teams", teamRoutes);
 app.use("/api/share", sharingRoutes);
 app.use("/api/stats", statsRoutes);
+app.use("/api/waitlist", waitlistRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

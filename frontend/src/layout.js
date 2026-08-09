@@ -24,6 +24,7 @@ import Button from "@/components/shared/Button";
 import Badge from "@/components/shared/Badge";
 import { FORMATIONS } from "@/lib/formations";
 import DemoBuilder from "@/components/landing/DemoBuilder";
+import WaitlistModal from "@/components/landing/WaitlistModal";
 import { buildDemoLineup, DEMO_FORMATION_CYCLE } from "@/components/landing/demoData";
 import LineupStatsPanel from "@/components/lineup/LineupStatsPanel";
 import { Reveal } from "@/components/landing/Reveal";
@@ -38,10 +39,10 @@ function Eyebrow({ children }) {
 }
 const FORMATION_COUNT = Object.keys(FORMATIONS).length;
 function HeroDemo() {
-  const [active, setActive] = useState(DEMO_FORMATION_CYCLE[0]);
   const [index, setIndex] = useState(0);
   const paused = useRef(false);
   const reduce = useReducedMotion();
+  const active = DEMO_FORMATION_CYCLE[index];
 
   const advance = useCallback(() => {
     setIndex((i) => (i + 1) % DEMO_FORMATION_CYCLE.length);
@@ -54,10 +55,6 @@ function HeroDemo() {
     }, 3400);
     return () => clearInterval(id);
   }, [advance, reduce]);
-
-  useEffect(() => {
-    setActive(DEMO_FORMATION_CYCLE[index]);
-  }, [index]);
 
   return (
     <div className="w-full">
@@ -82,7 +79,6 @@ function HeroDemo() {
             key={id}
             onClick={() => {
               paused.current = true;
-              setActive(id);
               setIndex(DEMO_FORMATION_CYCLE.indexOf(id));
             }}
             className={`rounded-lg border px-3.5 py-1.5 font-mono text-xs transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 ${
@@ -481,7 +477,7 @@ function HowItWorks() {
   );
 }
 
-function Pricing({ onSignUp }) {
+function Pricing({ onSignUp, onJoinWaitlist }) {
   const tiers = [
     {
       name: "Free",
@@ -564,7 +560,11 @@ function Pricing({ onSignUp }) {
                   <Button
                     variant={tier.ctaVariant}
                     className="w-full"
-                    onClick={tier.ctaVariant === "primary" ? onSignUp : undefined}
+                    onClick={
+                      tier.ctaVariant === "primary"
+                        ? onSignUp
+                        : onJoinWaitlist
+                    }
                   >
                     {tier.cta}
                   </Button>
@@ -693,6 +693,7 @@ function Footer() {
 export default function TacticForgeLanding() {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState("signin");
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
   const { user } = useAuth();
   const router = useRouter();
 
@@ -728,6 +729,10 @@ export default function TacticForgeLanding() {
     setAuthModalOpen(false);
   }
 
+  function openWaitlist() {
+    setWaitlistOpen(true);
+  }
+
   return (
     <main className="bg-background font-sans antialiased selection:bg-accent/30">
       <Navbar onSignIn={openSignIn} onSignUp={openSignUp} />
@@ -736,7 +741,7 @@ export default function TacticForgeLanding() {
       <Features />
       <LiveDemo />
       <HowItWorks />
-      <Pricing onSignUp={openSignUp} />
+      <Pricing onSignUp={openSignUp} onJoinWaitlist={openWaitlist} />
       <CTA onSignUp={openSignUp} />
       <Footer />
       <AuthModal
@@ -744,6 +749,7 @@ export default function TacticForgeLanding() {
         onClose={closeAuthModal}
         initialMode={authMode}
       />
+      <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
     </main>
   );
 }

@@ -136,3 +136,8 @@ export const accessCodeParams = z.object({
 export const shareIdParams = z.object({
   shareId: z.string().trim().min(1),
 });
+
+export const waitlistSchema = z.object({
+  email: z.string().trim().email("A valid email is required"),
+  name: z.string().trim().max(80).optional(),
+});

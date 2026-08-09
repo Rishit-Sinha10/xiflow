@@ -22,4 +22,5 @@ export const COLLECTIONS = {
   formations: "formations",
   sharing: "sharing",
   players: "players",
+  waitlist: "waitlist",
 };
