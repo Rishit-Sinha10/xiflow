@@ -1,3 +1,4 @@
+
 # xiflow
 xiflow is a premium football platform for building, saving, sharing, and evolving tactical lineups. The product is designed to feel polished, modern, and intuitive while remaining original in experience and product direction.
 ## Overview
@@ -38,7 +39,8 @@ The frontend currently includes
   - 4-5-1
   - 4-2-1-3
   - 4-2-3-1
-Backend infrastructure is not yet implemented, but the architecture is being designed to support it cleanly.
+- Pro waitlist modal for early access signups
+Backend infrastructure includes domain services and API endpoints, including waitlist submission and management.
 ## MVP Scope
 The first production milestone should focus on the following experience:
 1. lineup builder with formation switching
@@ -77,6 +79,7 @@ The first production milestone should focus on the following experience:
 - lineup management service
 - team and roster service
 - sharing service for public or private links
+- waitlist service for early access signups
 - collaboration service for future real-time editing
 ### Data Model Concepts
 Core entities include:
@@ -86,6 +89,7 @@ Core entities include:
 - Player
 - Formation
 - ShareLink
+- WaitlistEntry
 - CollaborationSession
 ## Planned API Surface
 The backend should expose domain-oriented endpoints such as:
@@ -97,6 +101,8 @@ The backend should expose domain-oriented endpoints such as:
 - GET /api/teams/:id
 - POST /api/share
 - GET /api/share/:token
+- POST /api/waitlist
+- GET /api/waitlist
 ## Recommended Project Structure
 A scalable structure for this app should follow a product-oriented layout:
 - app/ for routes and layouts
